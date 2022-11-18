@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form input 
+{
+  width: 20%;
+  height: 50%;
+  margin: 10px;
+
+}
+
+.card {
+  width: 500px;
+  height: 150px;
+  border:2px solid black ;
+  border-radius: 15px;
+  margin-left: 35%;
+}
+
+#updateInput{
+width: 100px;
+height: 20px;
+}
+
+#tbl {
+  width: 700px;
+  margin-top: 10px;
+  margin-left: 25%;
+  margin-right: 30%;
+  background-color: brown;
+}
