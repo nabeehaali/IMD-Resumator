@@ -1,5 +1,5 @@
 import React, {useState, createContext} from "react"; 
-import {Box, Button, Paper, Typography, Stepper, Step, StepLabel} from '@mui/material';
+import {Box, Toolbar, AppBar, Button, Paper, Typography, Stepper, Step, StepLabel} from '@mui/material';
 import Personal from '../FormComponents/PersonalInfo';
 import Education from '../FormComponents/Education';
 import Experience from '../FormComponents/Experience';
@@ -66,6 +66,20 @@ function Form()
       };
 
     return(
+        <div>
+        <Box sx={{ flexGrow: 1 }}>
+            <AppBar position="static">
+                <Toolbar>
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    IMD Resumator
+                </Typography>
+                <Button color="inherit" href="/">Home</Button>
+                <Button color="inherit" href="/Form">Templates</Button>
+                <Button color="inherit" href="/Instruction">How To</Button>
+                </Toolbar>
+            </AppBar>
+        </Box>
+        
         <UserContext.Provider value={{userInfo, setUserInfo}}> 
         <Container component="main" maxWidth="md" sx={{mb:4}}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
@@ -93,14 +107,14 @@ function Form()
                   onClick={handleNext}
                   sx={{ mt: 3, ml: 1 }}
                 >
-                  {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                  {activeStep === steps.length - 1 ? 'Download PDF' : 'Next'}
                 </Button>
               </Box>
             </React.Fragment>
             </Paper>
             </Container>
         </UserContext.Provider>
-        
+        </div>
     )
 }
 
