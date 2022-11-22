@@ -1,0 +1,17 @@
+.welcome {
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  -ms-transform: translate(-10%, -50%);
+  transform: translate(-10%, -50%);
+  width: 40%;
+}
+.welcome-img {
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  -ms-transform: translate(-90%, -50%);
+  transform: translate(-90%, -50%);
+}
