@@ -6,15 +6,15 @@ function getStarted()
     return(
         <div>
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+            <AppBar position="static" style={{backgroundColor: "white"}}>
                 <Toolbar>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    IMD Resumator
+                <Typography component="div" sx={{ flexGrow: 1 }}>
+                <img class="img_logo" style={{width: "170px"}} src="/logo.png" alt="Logo" ></img>
                 </Typography>
                 <Stack direction="row" spacing={2}>
-                <Button color="inherit" href="/">Home</Button>
-                <Button color="inherit" href="/Form">Templates</Button>
-                <Button color="inherit" href="/Instruction">How To</Button>
+                <Button style={{color: "black"}} color="inherit" href="/">Home</Button>
+                <Button style={{color: "black"}} color="inherit" href="/Form">Templates</Button>
+                <Button style={{color: "black"}} color="inherit" href="/Instruction">How To</Button>
                 </Stack>
                 </Toolbar>
             </AppBar>
@@ -25,7 +25,7 @@ function getStarted()
         <Button variant="contained" href="/Form">Create Your Resume</Button>
         </div>
         <div class="welcome-img">
-            <img src="https://www.w3schools.com/images/picture.jpg" alt="Italian Trulli"/>
+            <img class="img_home" src="/home.png" alt="Italian Trulli"/>
         </div>
         </div>
     )

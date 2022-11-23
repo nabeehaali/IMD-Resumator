@@ -1,0 +1,55 @@
+.title{
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+
+* {
+    box-sizing:content-box;
+  }
+  
+  .row {
+    display: flex;
+    padding: 20px;
+  }
+  
+  /* Create three equal columns that sits next to each other */
+  .column {
+    flex: 1 1 0;
+    padding: 15px;
+  }
+
+  .img{
+    width: 100%;
+    border:1px solid #000000;
+  }
+
+  .caption {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.center{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.button {
+    background-color: #177bde;
+    border: none;
+    color: white;
+    padding: 20px 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Work Sans', sans-serif;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    text-align: center;
+    left: 50%;
+  }
