@@ -6,6 +6,8 @@ import Experience from '../FormComponents/Experience';
 import Skills from '../FormComponents/Skills';
 import Output from '../FormComponents/Output';
 import { Container } from "@mui/system";
+import jsPDF from "jspdf";
+import img1 from '../SubPages/home.png';
 
 export const UserContext = createContext(null);
 
@@ -65,6 +67,15 @@ function Form()
         setActiveStep(activeStep - 1);
       };
 
+      const pdfGenerate= () =>{
+        var doc=new jsPDF('landscape','px','a4','false');
+        doc.addImage(img1,'PNG', 65,20,500,400)
+        doc.addPage()
+        doc.text(120,410,'name')
+        doc.save()
+      }
+
+      
     return(
         <div>
         <Box sx={{ flexGrow: 1 }}>
@@ -102,13 +113,24 @@ function Form()
                   </Button>
                 )}
 
-                <Button
+                {activeStep !== 4 && (
+                  <Button
                   variant="contained"
                   onClick={handleNext}
-                  sx={{ mt: 3, ml: 1 }}
-                >
-                  {activeStep === steps.length - 1 ? 'Download PDF' : 'Next'}
+                  sx={{ mt: 3, ml: 1 }}>
+                  Next
                 </Button>
+                )}
+
+                {activeStep === 4 && (
+                <Button 
+                variant="contained" 
+                onClick={pdfGenerate}
+                sx={{ mt: 3, ml: 1 }}>
+                    Download PDF
+                  </Button>
+                )}
+
               </Box>
             </React.Fragment>
             </Paper>
