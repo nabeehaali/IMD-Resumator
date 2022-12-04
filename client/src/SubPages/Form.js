@@ -1,5 +1,5 @@
 import React, {useState, createContext} from "react"; 
-import {Box, Toolbar, AppBar, Button, Paper, Typography, Stepper, Step, StepLabel} from '@mui/material';
+import {Box, Button, Paper, Typography, Stepper, Step, StepLabel} from '@mui/material';
 import Personal from '../FormComponents/PersonalInfo';
 import Education from '../FormComponents/Education';
 import Experience from '../FormComponents/Experience';
@@ -7,7 +7,9 @@ import Skills from '../FormComponents/Skills';
 import Output from '../FormComponents/Output';
 import { Container } from "@mui/system";
 import jsPDF from "jspdf";
-import img1 from '../SubPages/home.png';
+import img1 from '../Assets/home.png';
+import HelpButton from '../PageComponents/Help'
+import NavBar from '../PageComponents/Navbar';
 
 export const UserContext = createContext(null);
 
@@ -78,18 +80,7 @@ function Form()
       
     return(
         <div>
-        <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" style={{backgroundColor: "white"}}>
-                <Toolbar>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                <img class="img_logo" style={{width: "170px"}} src="/logo.png" alt="Logo" ></img>
-                </Typography>
-                <Button style={{color: "black"}} color="inherit" href="/">Home</Button>
-                <Button style={{color: "black"}} color="inherit" href="/Form">Templates</Button>
-                <Button style={{color: "black"}} color="inherit" href="/Instruction">How To</Button>
-                </Toolbar>
-            </AppBar>
-        </Box>
+        <NavBar/>
         
         <UserContext.Provider value={{userInfo, setUserInfo}}> 
         <Container component="main" maxWidth="md" sx={{mb:4}}>
@@ -136,6 +127,7 @@ function Form()
             </Paper>
             </Container>
         </UserContext.Provider>
+        <HelpButton/>
         </div>
     )
 }
