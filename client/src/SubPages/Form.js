@@ -41,7 +41,11 @@ function Form()
             end:'',
             activities:''
           }],
-          skill: [''],
+          skills: [{
+            communication:'',
+            design:'',
+            technical:''
+          }],
       });
 
     function getStepContent(step) {

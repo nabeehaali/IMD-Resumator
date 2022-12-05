@@ -66,7 +66,7 @@ export default function HelpForm() {
 
   return (
     <div>
-      <Button variant="contained" color="primary" startIcon={<MessageIcon />} onClick={handleClickOpen} style={{position: "absolute", bottom:"5%", right: "3%"}}>
+      <Button variant="contained" color="primary" startIcon={<MessageIcon />} onClick={handleClickOpen} style={{position: "fixed", bottom:"5%", right: "3%"}}>
         Need Help?
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
