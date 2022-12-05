@@ -1,12 +1,9 @@
 import React, {useContext} from "react";
-import { UserContext,  CSkillsContext, DSkillsContext, TSkillsContext } from "../SubPages/Form";
+import { UserContext} from "../SubPages/Form";
 
 function Output()
 {
     const { userInfo } = useContext(UserContext);
-    const { comskills } = useContext(CSkillsContext);
-    const { designskills } = useContext(DSkillsContext);
-    const { techskills } = useContext(TSkillsContext);
 
     return(
         <div>
@@ -35,7 +32,6 @@ function Output()
             <h4>{userInfo.experience.activities}</h4>
             <br></br>
             <h2>Skills</h2>
-            <h4>{comskills}</h4>
         </div>
     )
 }

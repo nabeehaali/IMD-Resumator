@@ -43,12 +43,17 @@ function Form()
             start:'',
             end:'',
             activities:''
+          }],
+          skills: [{
+            communication:'',
+            design:'',
+            technical:''
           }]
       });
 
-    const [comskills, setcomskills] = useState([]);
-    const [designskills, setdesignskills] = useState([]);
-    const [techskills, settechskills] = useState([]);
+    const [comskills, setcomskills] = useState([0]);
+    const [designskills, setdesignskills] = useState([0]);
+    const [techskills, settechskills] = useState([0]);
 
     function getStepContent(step) {
         switch (step) {

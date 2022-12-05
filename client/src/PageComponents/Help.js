@@ -92,7 +92,7 @@ export default function HelpForm() {
           <small>Format: John Smith</small>
           <TextField
             margin="dense"
-            id="name"
+            id="email"
             label="Email Address"
             type="email"
             fullWidth
@@ -105,7 +105,7 @@ export default function HelpForm() {
           <small>Format: john.smith@gmail.com</small>
           <TextField
             margin="dense"
-            id="name"
+            id="phone"
             label="Phone Number"
             type="text"
             fullWidth
