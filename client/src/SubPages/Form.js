@@ -12,6 +12,9 @@ import HelpButton from '../PageComponents/Help'
 import NavBar from '../PageComponents/Navbar';
 
 export const UserContext = createContext(null);
+export const CSkillsContext = createContext(null);
+export const DSkillsContext = createContext(null);
+export const TSkillsContext = createContext(null);
 
 function Form()
 {
@@ -40,13 +43,12 @@ function Form()
             start:'',
             end:'',
             activities:''
-          }],
-          skills: [{
-            communication:'',
-            design:'',
-            technical:''
-          }],
+          }]
       });
+
+    const [comskills, setcomskills] = useState([]);
+    const [designskills, setdesignskills] = useState([]);
+    const [techskills, settechskills] = useState([]);
 
     function getStepContent(step) {
         switch (step) {
@@ -87,6 +89,9 @@ function Form()
         <NavBar/>
         
         <UserContext.Provider value={{userInfo, setUserInfo}}> 
+        <CSkillsContext.Provider value={{comskills, setcomskills}}> 
+        <DSkillsContext.Provider value={{designskills, setdesignskills}}> 
+        <TSkillsContext.Provider value={{techskills, settechskills}}> 
         <Container component="main" maxWidth="md" sx={{mb:4}}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">
@@ -130,6 +135,9 @@ function Form()
             </React.Fragment>
             </Paper>
             </Container>
+        </TSkillsContext.Provider>
+        </DSkillsContext.Provider>
+        </CSkillsContext.Provider>
         </UserContext.Provider>
         <HelpButton/>
         </div>

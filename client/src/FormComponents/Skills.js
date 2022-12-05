@@ -1,16 +1,18 @@
 import React, {useContext} from "react";
-import { UserContext } from "../SubPages/Form";
+import { CSkillsContext, DSkillsContext, TSkillsContext } from "../SubPages/Form";
 import {TextField, Button, Box, Autocomplete, Checkbox} from '@mui/material';
-import {CheckBoxOutlineBlank, CheckBox} from '@mui/icons-material';
+import {CheckBoxOutlineBlank, CheckBox, ConstructionOutlined} from '@mui/icons-material';
 
 const icon = <CheckBoxOutlineBlank fontSize="small" />;
 const checkedIcon = <CheckBox fontSize="small" />;
 
 function Skills()
 {
-    const { userInfo, setUserInfo } = useContext(UserContext);
+    const { comskills, setcomskills } = useContext(CSkillsContext);
+    const { designskills, setdesignskills } = useContext(DSkillsContext);
+    const { techskills, settechskills} = useContext(TSkillsContext);
 
-    function handleCommuniationSkills(e) {
+    /*function handleCommuniationSkills(e) {
         setUserInfo((previous)=>({
             ...previous,
           skills: {
@@ -35,7 +37,7 @@ function Skills()
               technical: e.target.value
           }
         }));
-      }
+      }*/
 
     return(
         <div>
@@ -46,7 +48,10 @@ function Skills()
               id="checkboxes-tags-demo"
               options={top100Films}
               disableCloseOnSelect
-              onChange={handleCommuniationSkills}
+              onChange={(event, newValue) => {
+                setcomskills(newValue);
+                console.log(comskills);
+              }}
               getOptionLabel={(option) => option.title}
               renderOption={(props, option, { selected }) => (
                 <li {...props}>
@@ -69,7 +74,6 @@ function Skills()
               id="checkboxes-tags-demo"
               options={top100Films}
               disableCloseOnSelect
-              onChange={handleDesignSkills}
               getOptionLabel={(option) => option.title}
               renderOption={(props, option, { selected }) => (
                 <li {...props}>
@@ -92,7 +96,6 @@ function Skills()
               id="checkboxes-tags-demo"
               options={top100Films}
               disableCloseOnSelect
-              onChange={handleTechnicalSkills}
               getOptionLabel={(option) => option.title}
               renderOption={(props, option, { selected }) => (
                 <li {...props}>
@@ -109,7 +112,7 @@ function Skills()
                 <TextField {...params} label="Technical Skills" placeholder="Technical Skills" />
               )}
             />
-            <Button type="submit" variant="text" onClick={() => {window.alert("Data Saved!"); console.log(userInfo);}} > Save Information </Button>
+            <Button type="submit" variant="text" onClick={() => {window.alert("Data Saved!"); console.log(comskills, designskills, techskills);}} > Save Information </Button>
             </Box>
         </div>
     )
