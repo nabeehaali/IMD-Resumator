@@ -1,142 +1,82 @@
 import React, {useContext} from "react";
 import { UserContext } from "../SubPages/Form";
-import {TextField, Button, Box, Autocomplete, Checkbox} from '@mui/material';
-import {CheckBoxOutlineBlank, CheckBox} from '@mui/icons-material';
-
-const icon = <CheckBoxOutlineBlank fontSize="small" />;
-const checkedIcon = <CheckBox fontSize="small" />;
+import {FormControl, InputLabel, Box, Select, MenuItem, Button} from '@mui/material';
 
 function Skills()
 {
     const { userInfo, setUserInfo } = useContext(UserContext);
 
-    function handleCommuniationSkills(e) {
+    function handleSkills(e) {
         setUserInfo((previous)=>({
             ...previous,
-          skills: {
-              communication: e.target.value
-          }
-        }));
-      }
-
-      function handleDesignSkills(e) {
-        setUserInfo((previous)=>({
-            ...previous,
-          skills: {
-              design: e.target.value
-          }
-        }));
-      }
-
-      function handleTechnicalSkills(e) {
-        setUserInfo((previous)=>({
-            ...previous,
-          skills: {
-              technical: e.target.value
-          }
+            [e.target.name]: e.target.value
         }));
       }
 
     return(
         <div>
-            <Box component="form" sx={{'& .MuiTextField-root': { m: 1}, }} noValidate autoComplete="off">
-              <Autocomplete
-              multiple
-              fullWidth
-              id="checkboxes-tags-demo"
-              options={Com_Skills}
-              disableCloseOnSelect
-              onChange={handleCommuniationSkills}
-              getOptionLabel={(option) => option.skill}
-              renderOption={(props, option, { selected }) => (
-                <li {...props}>
-                  <Checkbox
-                    icon={icon}
-                    checkedIcon={checkedIcon}
-                    style={{ marginRight: 8 }}
-                    checked={selected}
-                  />
-                  {option.skill}
-                </li>
-              )}
-              renderInput={(params) => (
-                <TextField {...params} label="Communication Skills" placeholder="Communication Skills" />
-              )}
-            />
-            <Autocomplete
-              multiple
-              fullWidth
-              id="checkboxes-tags-demo"
-              options={Design_Skills}
-              disableCloseOnSelect
-              onChange={handleDesignSkills}
-              getOptionLabel={(option) => option.skill}
-              renderOption={(props, option, { selected }) => (
-                <li {...props}>
-                  <Checkbox
-                    icon={icon}
-                    checkedIcon={checkedIcon}
-                    style={{ marginRight: 8 }}
-                    checked={selected}
-                  />
-                  {option.skill}
-                </li>
-              )}
-              renderInput={(params) => (
-                <TextField {...params} label="Design Skills" placeholder="Design Skills" />
-              )}
-            />
-            <Autocomplete
-              multiple
-              fullWidth
-              id="checkboxes-tags-demo"
-              options={Technical_Skills}
-              disableCloseOnSelect
-              onChange={handleTechnicalSkills}
-              getOptionLabel={(option) => option.skill}
-              renderOption={(props, option, { selected }) => (
-                <li {...props}>
-                  <Checkbox
-                    icon={icon}
-                    checkedIcon={checkedIcon}
-                    style={{ marginRight: 8 }}
-                    checked={selected}
-                  />
-                  {option.skill}
-                </li>
-              )}
-              renderInput={(params) => (
-                <TextField {...params} label="Technical Skills" placeholder="Technical Skills" />
-              )}
-            />
-            <Button type="submit" variant="text" onClick={() => {window.alert("Data Saved!"); console.log(userInfo);}} > Save Information </Button>
-            </Box>
+          <Box sx={{ minWidth: 120 }}>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Strongest Interpersonal Skill</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          name="comSkills"
+          value={userInfo.comSkills}
+          label="Strongest Interpersonal Skill"
+          onChange={handleSkills}
+        >
+          <MenuItem value={'Time Management'}>Time Management</MenuItem>
+          <MenuItem value={'Problem Solving'}>Problem Solving</MenuItem>
+          <MenuItem value={'Leadership'}>Leadership</MenuItem>
+          <MenuItem value={'Attention to Detail'}>Attention to Detail</MenuItem>
+          <MenuItem value={'Communication'}>Communication</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
+    <br></br>
+    <Box sx={{ minWidth: 120 }}>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Strongest Design Skill</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          name="designSkills"
+          value={userInfo.designSkills}
+          label="Strongest Design Skill"
+          onChange={handleSkills}
+        >
+          <MenuItem value={'3D Modelling'}>3D Modelling</MenuItem>
+          <MenuItem value={'Pixel Art'}>Pixel Art</MenuItem>
+          <MenuItem value={'Graphic Design'}>Graphic Design</MenuItem>
+          <MenuItem value={'UI/UX Design'}>Ui/UX Design</MenuItem>
+          <MenuItem value={'Illustration'}>Illustration</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
+    <br></br>
+    <Box sx={{ minWidth: 120 }}>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Strongest Technical Skill</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          name="techSkills"
+          value={userInfo.techSkills}
+          label="Strongest Technical Skill"
+          onChange={handleSkills}
+        >
+          <MenuItem value={'Game Development'}>Game Development</MenuItem>
+          <MenuItem value={'Web Development'}>Web Development</MenuItem>
+          <MenuItem value={'Mobile Development'}>Mobile Development</MenuItem>
+          <MenuItem value={'Frontend Development'}>Frontend Development</MenuItem>
+          <MenuItem value={'Backend Development'}>Backend Development</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
+    <Button variant="text" onClick={() => {console.log(userInfo);}} > Save Information </Button>
         </div>
     )
 }
 
 export default Skills;
-
-const Com_Skills = [
-  { skill: 'Project Management'},
-  { skill: 'Communication'},
-  { skill: 'Teamwork'},
-  { skill: 'Leadership'},
-  { skill: 'Problem Solving'},
-];
-
-const Design_Skills = [
-  { skill: '3D Modelling'},
-  { skill: 'Pixel Art'},
-  { skill: 'Vector Art'},
-  { skill: 'Graphic Design'},
-  { skill: 'UI/UX Design'},
-];
-
-const Technical_Skills = [
-  { skill: 'Game Development'},
-  { skill: 'Web Development'},
-  { skill: 'Frontend Development'},
-  { skill: 'Backend Development'},
-  { skill: 'Mobile Development'},
-];

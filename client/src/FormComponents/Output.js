@@ -32,6 +32,9 @@ function Output()
             <h4>{userInfo.experience.activities}</h4>
             <br></br>
             <h2>Skills</h2>
+            <h4>{userInfo.comSkills}</h4>
+            <h4>{userInfo.designSkills}</h4>
+            <h4>{userInfo.techSkills}</h4>
         </div>
     )
 }
