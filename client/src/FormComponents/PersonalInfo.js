@@ -67,11 +67,11 @@ function Output()
             <Box component="form" sx={{'& .MuiTextField-root': { m: 1}, }} noValidate autoComplete="off">
             <TextField required id="outlined-basic" label="First Name" variant="outlined" onChange={handleFName}/>
             <TextField required id="outlined-basic" label="Last Name" variant="outlined" onChange={handleLName}/><br></br>
-            <TextField required id="outlined-basic" label="Email" variant="outlined" onChange={handleEmail}/>
-            <TextField required id="outlined-basic" label="Phone" variant="outlined" onChange={handlePhone}/>
+            <TextField required type="email" id="outlined-basic" label="Email" variant="outlined" onChange={handleEmail}/>
+            <TextField required inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id="outlined-basic" label="Phone" variant="outlined" onChange={handlePhone}/>
             <TextField required id="outlined-basic" fullWidth label="Location" variant="outlined" onChange={handleLocation}/>
-            <TextField required id="outlined-basic" label="LinkedIn URL" variant="outlined" onChange={handleWebsite}/>
-            <TextField required id="outlined-basic" label="Portfolio URL" variant="outlined" onChange={handlePortfolio}/><br></br>
+            <TextField required type="url" id="outlined-basic" label="LinkedIn URL" variant="outlined" onChange={handleWebsite}/>
+            <TextField required type="url" id="outlined-basic" label="Portfolio URL" variant="outlined" onChange={handlePortfolio}/><br></br>
             <TextField required id="outlined-basic" fullWidth label="Professional Summary"  multiline rows={5} variant="outlined" onChange={handleSummary}/>
             <Button variant="text" onClick={() => {window.alert("Data Saved!"); console.log(userInfo);}} > Save Information </Button>
             </Box>
