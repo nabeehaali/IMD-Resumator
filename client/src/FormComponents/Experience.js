@@ -142,7 +142,7 @@ function Education()
             onChange={handleActivity} 
             value={ActivitydValue} error={ActivityError}/>
 
-            <Button type="submit" variant="text" onClick={() => {onSubmit();}} > Save Information </Button>
+            <Button variant="text" onClick={() => {onSubmit();}} > Save Information </Button>
             </Box>
         </div>
     )

@@ -11,7 +11,7 @@ export default function NavBar() {
                 </Typography>
                 <Stack direction="row" spacing={2}>
                 <Button style={{color: "black"}} color="inherit" href="/">Home</Button>
-                <Button style={{color: "black"}} color="inherit" href="/Form">Templates</Button>
+                <Button style={{color: "black"}} color="inherit" href="/Form">Build Resume</Button>
                 <Button style={{color: "black"}} color="inherit" href="/Instruction">How To</Button>
                 </Stack>
                 </Toolbar>
