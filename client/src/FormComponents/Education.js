@@ -59,8 +59,9 @@ function Profile()
             <TextField required type="date" id="outlined-basic" helperText="Start Date" variant="outlined" onChange={handleStart}/>
             <TextField required type="date" id="outlined-basic" helperText="End Date" variant="outlined" onChange={handleEnd}/><br></br><br></br>
             
-            <FormControl>
-                <InputLabel id="demo-simple-select-label">Type</InputLabel>
+            <FormControl sx={{  width: 300}}>
+                <InputLabel id="demo-simple-select-label" >Type</InputLabel>
+            
                 <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"

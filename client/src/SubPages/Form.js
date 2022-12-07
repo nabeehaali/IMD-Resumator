@@ -10,11 +10,24 @@ import jsPDF from "jspdf";
 import img1 from '../Assets/home.png';
 import HelpButton from '../PageComponents/Help'
 import NavBar from '../PageComponents/Navbar';
+import {useReactToPrint} from 'react-to-print'
+
+
+
 
 export const UserContext = createContext(null);
 
 function Form()
 {
+  
+/*
+  const handlePrint = useReactToPrint({
+    content:()=> Output,
+    documentTitle: 'IMD - Resume',
+    onAfterPrint: ()=> alert('Print success')
+});
+*/
+    
     const steps = ['Personal Information', 'Education', 'Experience', 'Skills', 'Output'];
     const [activeStep, setActiveStep] = React.useState(0); 
     
@@ -65,6 +78,7 @@ function Form()
 
       const handleNext = () => {
         setActiveStep(activeStep + 1);
+
       };
     
       const handleBack = () => {

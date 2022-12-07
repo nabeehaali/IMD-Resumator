@@ -1,0 +1,109 @@
+import
+*{
+    margin: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-align: left;
+    
+}
+
+
+.bold{
+    font-weight: 700;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.semi-bold{
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.resume{
+    width: 800px;
+    height: auto;
+    display: flex;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.subheading{
+    font-weight: 500;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #177bde;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.data{
+    font-weight: 400;
+    font-size: 16px;
+    text-transform:inherit;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+ul{
+    margin-bottom: 50px;
+}
+
+
+ .resume_left{
+    width: 400px;
+    background: #000000;
+    padding-bottom: 20px;
+    float: left;
+}
+
+.resume_profile{
+    width: 100%;
+    height: 180px;
+}
+
+.resume_profile img{
+    width: 100%;
+    height: 140%;
+}
+
+.resume_content{
+    color: #fff;
+    padding-top: 50px;
+}
+
+.title{
+    margin-bottom: 20px;
+}
+
+.resume_left .bold{
+    color: #fff;
+}
+
+
+.resume_skills{
+    font-weight: 400;
+    font-size: 16px;
+    text-transform:inherit;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.resume_links{
+    padding-right: 10px;
+}
+
+.links{
+    font-size: 12px;
+    text-align: justify;
+}
+
+.resume_right{
+height:100;
+width: 100%;
+background: #fff;
+padding: 25px;
+overflow: hidden;
+}
+
+hr{
+    color: #177bde;
+}

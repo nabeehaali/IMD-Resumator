@@ -7,11 +7,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //import Form from "./Form.js";
 import GetStarted from "./SubPages/Home"
 
+
 function App() {
   return (
     <div className="App">
-      <GetStarted />
+     <GetStarted />
     </div>
+    
   );
 }
 
