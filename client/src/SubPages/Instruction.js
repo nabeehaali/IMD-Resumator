@@ -14,16 +14,12 @@ function Instruction()
 
         <div class="row">
         <div class="column">
-          <img class="img" src="/first.png" alt="Choose Template"></img>
-          <span class="caption">1. Choose a template</span>
-        </div>
-        <div class="column">
           <img class="img" src="/second.png" alt="Fill Details"></img>
-          <span class="caption">2. Fill your details</span>
+          <span class="caption">1. Fill your details</span>
         </div>
         <div class="column">
           <img class="img" src="/third.png" alt="Download"></img>
-          <span class="caption">3. Build and download!</span>
+          <span class="caption">2. Build and download!</span>
         </div>
         </div>
 
