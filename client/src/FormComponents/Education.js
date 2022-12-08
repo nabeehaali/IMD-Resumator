@@ -6,6 +6,55 @@ function Profile()
 {
     const { userInfo, setUserInfo } = useContext(UserContext);
 
+    const[titleValue, titlechange]=React.useState('');
+    const[titleError,titlechangeError]=React.useState(false);
+
+    const[institutionValue, institutionchnage]=React.useState('');
+    const[institutionError,institutionchangeError]=React.useState(false);
+
+    const[startValue, startchange]=React.useState('');
+    const[startError,starthangeError]=React.useState(false);
+
+    const[endValue, endchange]=React.useState('');
+    const[endError,endchangeError]=React.useState(false);
+
+    const[typeValue, typechange]=React.useState('');
+    const[typeError,typechangeError]=React.useState(false);
+
+    const onSubmit=(e)=>{
+        titlechangeError(false);
+        institutionchangeError(false);
+        starthangeError(false);
+        endchangeError(false);
+        typechangeError(false);
+    
+
+    const formData={titleValue,institutionValue,startValue,endValue,typeValue};
+
+    if(titleValue === ''){
+        titlechangeError(true);
+       /* window.alert("Data Input Required");*/
+      }
+      if(institutionValue === ''){
+        institutionchangeError(true);
+       
+      }
+      if(startValue === ''){
+        starthangeError(true);
+     
+      }
+      if(endValue === ''){
+        endchangeError(true);
+     
+      }
+      if(typeValue === ''){
+        typechangeError(true);
+       
+      } else{
+        window.alert("Data Saved!");
+      }
+    }
+
     function handleMajor(e) {
         setUserInfo((previous)=>({
             ...previous,
@@ -13,6 +62,7 @@ function Profile()
                 title: e.target.value
             }
         }));
+        titlechange(e.target.value);
     }
 
     function handleInstitution(e) {
@@ -22,6 +72,7 @@ function Profile()
                 institution: e.target.value
             }
         }));
+        institutionchnage(e.target.value);
     }
 
     function handleStart(e) {
@@ -31,6 +82,7 @@ function Profile()
                 start: e.target.value
             }
         }));
+        startchange(e.target.value);
     }
 
     function handleEnd(e) {
@@ -40,6 +92,7 @@ function Profile()
                 end: e.target.value
             }
         }));
+        endchange(e.target.value);
     }
 
     function handleType(e) {
@@ -49,15 +102,23 @@ function Profile()
                 type: e.target.value
             }
         }));
+        typechange(e.target.value);
     }
 
     return(
         <div>
             <Box component="form" sx={{'& .MuiTextField-root': { m: 1}, }} noValidate autoComplete="off">
-            <TextField required id="outlined-basic" label="Major" variant="outlined" onChange={handleMajor}/>
-            <TextField required id="outlined-basic" label="Institution Name" variant="outlined" onChange={handleInstitution}/><br></br>
-            <TextField required type="date" id="outlined-basic" helperText="Start Date" variant="outlined" onChange={handleStart}/>
-            <TextField required type="date" id="outlined-basic" helperText="End Date" variant="outlined" onChange={handleEnd}/><br></br><br></br>
+            <TextField required id="outlined-basic" label="Major" variant="outlined" onChange={handleMajor}
+             value={titleValue} error={titleError}/>
+
+            <TextField required id="outlined-basic" label="Institution Name" variant="outlined" onChange={handleInstitution}
+             value={institutionValue} error={institutionError}/><br></br>
+
+            <TextField required type="date" id="outlined-basic" helperText="Start Date" variant="outlined" onChange={handleStart}
+             value={startValue} error={startError}/>
+
+            <TextField required type="date" id="outlined-basic" helperText="End Date" variant="outlined" onChange={handleEnd}
+             value={endValue} error={endError}/><br></br><br></br>
             
             <FormControl sx={{  width: 300}}>
                 <InputLabel id="demo-simple-select-label" >Type</InputLabel>
@@ -66,7 +127,7 @@ function Profile()
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 name="type"
-                value={userInfo.education.type}
+                value={typeValue} error={typeError}
                 label="Type"
                 onChange={handleType}
                 >
@@ -79,7 +140,7 @@ function Profile()
             </FormControl>
             
             <br></br>
-            <Button variant="text" onClick={() => {console.log(userInfo);}} > Save Information </Button>
+            <Button variant="text" onClick={() => {onSubmit();}} > Save Information </Button>
             </Box>
         </div>
     )

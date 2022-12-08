@@ -6,14 +6,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //import ContextTutorial from "./UseContext/contextMT";
 //import Form from "./Form.js";
 import GetStarted from "./SubPages/Home"
+import Output from './FormComponents/Output';
 
 
 function App() {
   return (
-    <div className="App">
+        <div className="App">
      <GetStarted />
-    </div>
-    
+    </div>  
   );
 }
 

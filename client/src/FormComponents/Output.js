@@ -3,7 +3,7 @@ import { UserContext} from "../SubPages/Form";
 import './Output.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import{faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons'
-
+import {useReactToPrint} from 'react-to-print'
 
 
 function Output()
@@ -12,11 +12,16 @@ function Output()
     
     const componentRef = useRef();
     
+    
+ /* const handlePrint = useReactToPrint({
+    content:()=> componentRef.current,
+    documentTitle: 'IMD - Resume',
+    onAfterPrint: ()=> alert('Print success')
+});*/
 
 
-    return(
-        
-        <div ref={componentRef}  className="resume" >
+    return(      
+                <div ref={componentRef}  className="resume" >
             <div className="resume_left">
                 <div className="resume_profile">
                     <img src="avatar.png" alt="profile_pic" />
@@ -84,8 +89,6 @@ function Output()
         
             </div>
         </div>
-      
-
     )
 }
 

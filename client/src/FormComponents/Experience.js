@@ -21,7 +21,7 @@ function Education()
     const[ExpEndValue,ExpEndchange]=React.useState('');
     const[ExpEndError,ExpEndchangeError]=React.useState(false);
 
-    const[ActivitydValue,Activitychange]=React.useState('');
+    const[ActivitydValue,Activitychange]=React.useState(''); 
     const[ActivityError,ActivitychangeError]=React.useState(false);
    
     const onSubmit=(e)=>{
@@ -58,7 +58,7 @@ function Education()
     }
     
   }
-  
+
     function handleExpTitle(e) {
         setUserInfo((previous)=>({
             ...previous,
@@ -142,7 +142,7 @@ function Education()
             onChange={handleActivity} 
             value={ActivitydValue} error={ActivityError}/>
 
-            <Button type="submit" variant="text" onClick={() => {onSubmit();}} > Save Information </Button>
+            <Button variant="text" onClick={() => {onSubmit();}} > Save Information </Button>
             </Box>
         </div>
     )

@@ -10,7 +10,7 @@ import jsPDF from "jspdf";
 import img1 from '../Assets/home.png';
 import HelpButton from '../PageComponents/Help'
 import NavBar from '../PageComponents/Navbar';
-import {useReactToPrint} from 'react-to-print'
+
 
 
 
@@ -20,13 +20,7 @@ export const UserContext = createContext(null);
 function Form()
 {
   
-/*
-  const handlePrint = useReactToPrint({
-    content:()=> Output,
-    documentTitle: 'IMD - Resume',
-    onAfterPrint: ()=> alert('Print success')
-});
-*/
+
     
     const steps = ['Personal Information', 'Education', 'Experience', 'Skills', 'Output'];
     const [activeStep, setActiveStep] = React.useState(0); 
@@ -85,12 +79,16 @@ function Form()
         setActiveStep(activeStep - 1);
       };
 
-      const pdfGenerate= () =>{
+
+    /*  const pdfGenerate=()=>{
+
+      }*/
+     const pdfGenerate= () =>{
         var doc=new jsPDF('landscape','px','a4','false');
         doc.addImage(img1,'PNG', 65,20,500,400)
         doc.addPage()
-        doc.text(120,410,'name')
-        doc.save()
+       doc.text(120,410,'name')
+      doc.save()
       }
 
       
@@ -131,11 +129,11 @@ function Form()
 
                 {activeStep === 4 && (
                 <Button 
-                variant="contained" 
-                onClick={pdfGenerate}
+                 variant="contained" 
+                 onClick={pdfGenerate}
                 sx={{ mt: 3, ml: 1 }}>
-                    Download PDF
-                  </Button>
+                     Download PDF
+                   </Button>
                 )}
 
               </Box>

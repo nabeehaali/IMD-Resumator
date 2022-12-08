@@ -6,11 +6,51 @@ function Skills()
 {
     const { userInfo, setUserInfo } = useContext(UserContext);
 
+    const[InterpersonalValue,Interpersonalchange]=React.useState('');
+    const[InterpersonalError,InterpersonalchangeError]=React.useState(false);
+
+    const[DesignValue,Designchange]=React.useState('');
+    const[DesignError,DesignchangeError]=React.useState(false);
+
+    const[TechnicalValue,Technicalchange]=React.useState('');
+    const[TechnicalError,TechnicalchangeError]=React.useState(false);
+
+    const onSubmit=(e)=>{
+      InterpersonalchangeError(false);
+      DesignchangeError(false);
+      TechnicalchangeError(false);
+
+      const formData={InterpersonalValue,DesignValue,TechnicalValue};
+
+      if(InterpersonalValue === ''){
+        InterpersonalchangeError(true);
+       /* window.alert("Data Input Required");*/
+      }
+      if(DesignValue === ''){
+        DesignchangeError(true);
+       
+      }
+      if(TechnicalValue === ''){
+        TechnicalchangeError(true);
+     
+      } else{
+        window.alert("Data Saved!");
+      }
+  }
     function handleSkills(e) {
         setUserInfo((previous)=>({
             ...previous,
             [e.target.name]: e.target.value
         }));
+       if(e.target.name === "comSkills"){
+        Interpersonalchange(e.target.value);
+       }
+       if(e.target.name === "designSkills"){
+        Designchange(e.target.value);
+       }
+       if(e.target.name === "techSkills"){
+        Technicalchange(e.target.value);
+       }
       }
 
     return(
@@ -22,9 +62,11 @@ function Skills()
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="comSkills"
-          value={userInfo.comSkills}
+          value={InterpersonalValue} 
+          error={InterpersonalError}
           label="Strongest Interpersonal Skill"
           onChange={handleSkills}
+          
         >
           <MenuItem value={'Time Management'}>Time Management</MenuItem>
           <MenuItem value={'Problem Solving'}>Problem Solving</MenuItem>
@@ -42,7 +84,8 @@ function Skills()
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="designSkills"
-          value={userInfo.designSkills}
+          value={DesignValue} 
+          error={DesignError}
           label="Strongest Design Skill"
           onChange={handleSkills}
         >
@@ -62,7 +105,8 @@ function Skills()
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="techSkills"
-          value={userInfo.techSkills}
+          value={TechnicalValue} 
+          error={TechnicalError}
           label="Strongest Technical Skill"
           onChange={handleSkills}
         >
@@ -74,7 +118,7 @@ function Skills()
         </Select>
       </FormControl>
     </Box>
-    <Button variant="text" onClick={() => {console.log(userInfo);}} > Save Information </Button>
+    <Button variant="text" onClick={() => {onSubmit(); }} > Save Information </Button>
         </div>
     )
 }
