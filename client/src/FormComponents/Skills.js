@@ -1,10 +1,11 @@
 import React, {useContext} from "react";
-import { UserContext } from "../SubPages/Form";
+import { UserContext, NextContext4 } from "../SubPages/Form";
 import {FormControl, InputLabel, Box, Select, MenuItem, Button} from '@mui/material';
 
 function Skills()
 {
     const { userInfo, setUserInfo } = useContext(UserContext);
+    const { showNext4, setShowNext4 } = useContext(NextContext4);
 
     const[InterpersonalValue,Interpersonalchange]=React.useState('');
     const[InterpersonalError,InterpersonalchangeError]=React.useState(false);
@@ -35,6 +36,7 @@ function Skills()
      
       } else{
         window.alert("Data Saved!");
+        setShowNext4(false);
       }
   }
     function handleSkills(e) {

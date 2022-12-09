@@ -41,7 +41,7 @@ function Output()
                     </div>
                     <div className="resume_item resume_skills">
                         <ul>
-                        <h3 className="subheading">Skill's</h3>
+                        <h3 className="subheading">Skills</h3>
                         <h4 className="resume_skills">{userInfo.comSkills}</h4>
                         <h4 className="resume_skills">{userInfo.designSkills}</h4>
                          <h4 className="resume_skills">{userInfo.techSkills}</h4>

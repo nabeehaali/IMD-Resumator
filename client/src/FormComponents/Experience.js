@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { UserContext } from "../SubPages/Form";
+import { UserContext, NextContext3 } from "../SubPages/Form";
 import {TextField, Button, Box} from '@mui/material';
 import { useForm } from "react-hook-form";
 
@@ -8,6 +8,7 @@ function Education()
   const{handleSubmit} = useForm();
 
     const { userInfo, setUserInfo } = useContext(UserContext);
+    const { showNext3, setShowNext3 } = useContext(NextContext3);
 
     const[ExpTitleValue,ExpTitlechange]=React.useState('');
     const[ExpTitleError,ExpTitlechangeError]=React.useState(false);
@@ -55,6 +56,7 @@ function Education()
      
     }else{
       window.alert("Data Saved!");
+      setShowNext3(false);
     }
     
   }

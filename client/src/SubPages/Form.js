@@ -12,19 +12,25 @@ import HelpButton from '../PageComponents/Help'
 import NavBar from '../PageComponents/Navbar';
 
 
-
-
-
 export const UserContext = createContext(null);
+export const NextContext = createContext(null);
+export const NextContext2 = createContext(null);
+export const NextContext3 = createContext(null);
+export const NextContext4 = createContext(null);
+
 
 function Form()
 {
   
 
-    
     const steps = ['Personal Information', 'Education', 'Experience', 'Skills', 'Output'];
     const [activeStep, setActiveStep] = React.useState(0); 
-    
+
+    const [showNext, setShowNext] = React.useState(true);
+    const [showNext2, setShowNext2] = React.useState(true);
+    const [showNext3, setShowNext3] = React.useState(true);
+    const [showNext4, setShowNext4] = React.useState(true);
+
     const [userInfo, setUserInfo] = useState({
           Fname: '',
           Lname:'',
@@ -70,6 +76,7 @@ function Form()
         }
       }
 
+
       const handleNext = () => {
         setActiveStep(activeStep + 1);
 
@@ -77,6 +84,10 @@ function Form()
     
       const handleBack = () => {
         setActiveStep(activeStep - 1);
+        setShowNext(true);
+        setShowNext2(true);
+        setShowNext3(true);
+        setShowNext4(true);
       };
 
 
@@ -134,6 +145,10 @@ function Form()
         <NavBar/>
         
         <UserContext.Provider value={{userInfo, setUserInfo}}> 
+        <NextContext.Provider value={{showNext, setShowNext}}> 
+        <NextContext2.Provider value={{showNext2, setShowNext2}}> 
+        <NextContext3.Provider value={{showNext3, setShowNext3}}> 
+        <NextContext4.Provider value={{showNext4, setShowNext4}}> 
         <Container component="main" maxWidth="md" sx={{mb:4}}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">
@@ -155,8 +170,39 @@ function Form()
                   </Button>
                 )}
 
-                {activeStep !== 4 && (
+                {activeStep === 0 && (
                   <Button
+                  disabled = {showNext}
+                  variant="contained"
+                  onClick={handleNext}
+                  sx={{ mt: 3, ml: 1 }}>
+                  Next
+                </Button>
+                )}
+
+                {activeStep === 1 && (
+                  <Button
+                  disabled = {showNext2}
+                  variant="contained"
+                  onClick={handleNext}
+                  sx={{ mt: 3, ml: 1 }}>
+                  Next
+                </Button>
+                )}
+
+                 {activeStep === 2 && (
+                  <Button
+                  disabled = {showNext3}
+                  variant="contained"
+                  onClick={handleNext}
+                  sx={{ mt: 3, ml: 1 }}>
+                  Next
+                </Button>
+                )}
+
+                {activeStep === 3 && (
+                  <Button
+                  disabled = {showNext4}
                   variant="contained"
                   onClick={handleNext}
                   sx={{ mt: 3, ml: 1 }}>
@@ -177,6 +223,10 @@ function Form()
             </React.Fragment>
             </Paper>
             </Container>
+            </NextContext4.Provider>
+            </NextContext3.Provider>
+            </NextContext2.Provider>
+            </NextContext.Provider>
         </UserContext.Provider>
         <HelpButton/>
         </div>

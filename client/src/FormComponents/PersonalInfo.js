@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { UserContext } from "../SubPages/Form";
+import { UserContext, NextContext } from "../SubPages/Form";
 import { useForm } from "react-hook-form";
 import { SettingsInputCompositeTwoTone } from "@material-ui/icons";
 import {Button,Box, TextField} from '@mui/material';
@@ -10,6 +10,7 @@ function Output(){
   const{handleSubmit} = useForm();
 
     const { userInfo, setUserInfo } = useContext(UserContext);
+    const { showNext, setShowNext } = useContext(NextContext);
 
     const[fnameValue,namechange]=React.useState('');
     const[fnameError,namechangeError]=React.useState(false);
@@ -81,6 +82,7 @@ function Output(){
       } 
       else{
         window.alert("Data Saved!");
+        setShowNext(false);
       }
       
      /* if(fnameValue){

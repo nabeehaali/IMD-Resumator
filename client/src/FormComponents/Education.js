@@ -1,10 +1,11 @@
 import React, {useContext} from "react";
-import { UserContext } from "../SubPages/Form";
+import { UserContext, NextContext2 } from "../SubPages/Form";
 import {TextField, Button, Box, FormControl, InputLabel, Select, MenuItem} from '@mui/material';
 
 function Profile()
 {
     const { userInfo, setUserInfo } = useContext(UserContext);
+    const { showNext2, setShowNext2 } = useContext(NextContext2);
 
     const[titleValue, titlechange]=React.useState('');
     const[titleError,titlechangeError]=React.useState(false);
@@ -52,6 +53,7 @@ function Profile()
        
       } else{
         window.alert("Data Saved!");
+        setShowNext2(false);
       }
     }
 
