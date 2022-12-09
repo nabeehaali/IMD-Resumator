@@ -3,7 +3,7 @@ import { UserContext} from "../SubPages/Form";
 import './Output.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import{faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons'
-import {useReactToPrint} from 'react-to-print'
+//import {useReactToPrint} from 'react-to-print'
 
 
 function Output()

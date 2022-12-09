@@ -7,7 +7,7 @@ import Skills from '../FormComponents/Skills';
 import Output from '../FormComponents/Output';
 import { Container } from "@mui/system";
 import jsPDF from "jspdf";
-import img1 from '../Assets/home.png';
+import img1 from '../Assets/avatar.png';
 import HelpButton from '../PageComponents/Help'
 import NavBar from '../PageComponents/Navbar';
 
@@ -84,10 +84,47 @@ function Form()
 
       }*/
      const pdfGenerate= () =>{
-        var doc=new jsPDF('landscape','px','a4','false');
-        doc.addImage(img1,'PNG', 65,20,500,400)
-        doc.addPage()
-       doc.text(120,410,'name')
+        var doc=new jsPDF('portrait','px','a4','false');
+        doc.addImage(img1,'PNG', 20,20,100,100)
+       doc.text(userInfo.Fname, 50,200)
+       doc.text(userInfo.Lname,50,220)
+       doc.setTextColor('#0791ed')
+       doc.text('PERSONAL INFORMATION',20,250)
+       doc.setTextColor('#000000')
+       doc.text(userInfo.email,20,270)
+       doc.text(userInfo.phone,20,290)
+       doc.text(userInfo.location,20,310)
+       doc.setTextColor('#0791ed')
+       doc.text('SKILLS',20,340)
+       doc.setTextColor('#000000')
+       doc.text(userInfo.comSkills,20,360)
+       doc.text(userInfo.techSkills,20,380)
+       doc.text(userInfo.designSkills,20,400)
+       doc.setTextColor('#0791ed')
+       doc.text('LINKS',20,440)
+       doc.setTextColor('#000000')
+       doc.text(userInfo.linkedin,20,460)
+       doc.text(userInfo.portfolio,20,480)
+       doc.setTextColor('#0791ed')
+       doc.text('SUMAARY',200,100)
+       doc.setTextColor('#000000')
+       doc.text(userInfo.summary, 200,120)
+       doc.setTextColor('#0791ed')
+       doc.text('EDUCATION',200,150)
+       doc.setTextColor('#000000')
+       doc.text(userInfo.education.title,200,170)
+       doc.text(userInfo.education.institution,200,190)
+       doc.text(userInfo.education.start,200,210)
+       doc.text(userInfo.education.end,200,230)
+       doc.text(userInfo.education.type,200,250)
+       doc.setTextColor('#0791ed')
+       doc.text('EXPERIENCE',200,280)
+       doc.setTextColor('#000000')
+       doc.text(userInfo.experience.title,200,300)
+       doc.text(userInfo.experience.company,200,320)
+       doc.text(userInfo.experience.start,200,340)
+       doc.text(userInfo.experience.end,200,360)
+       doc.text(userInfo.experience.activities,200,380)
       doc.save()
       }
 
