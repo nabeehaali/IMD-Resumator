@@ -18,7 +18,7 @@ export const NextContext2 = createContext(null);
 export const NextContext3 = createContext(null);
 export const NextContext4 = createContext(null);
 
-
+//Nabeeha Ali: This is the main form page that handles which pae of the multistep form gets rendered depending on the number of times the 'next' button has been clicked. This is also the main storage for all form inputs regarding the resume, which is accessed using React's useContext component. At the last page of the multistep form, the user can download their resume as a PDF and the customization of the PDF file is handled here.
 function Form()
 {
   

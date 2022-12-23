@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { SettingsInputCompositeTwoTone } from "@material-ui/icons";
 import {Button,Box, TextField} from '@mui/material';
 
-
+//Nabeeha Ali: This form consists of text fields with text, URL, and number data types for the user to input their personal information. The data entered gets saved in the userInfo useState variable from the Form.js file. Form validation was completed by another member of the group.
 function Output(){
 
   const{handleSubmit} = useForm();

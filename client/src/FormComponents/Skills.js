@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import { UserContext, NextContext4 } from "../SubPages/Form";
 import {FormControl, InputLabel, Box, Select, MenuItem, Button} from '@mui/material';
 
+//Nabeeha Ali: This form consists of dropdowns where the user selects their strongest skill in different categories. The data entered gets saved in the useState variable from the Form.js file. Form validation was completed by another member of the group.
 function Skills()
 {
     const { userInfo, setUserInfo } = useContext(UserContext);

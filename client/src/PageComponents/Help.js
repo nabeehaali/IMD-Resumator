@@ -3,7 +3,7 @@ import {Button, TextField, Dialog, DialogActions, DialogContent, DialogContentTe
 import MessageIcon from '@mui/icons-material/Message';
 import { useForm } from "react-hook-form";
 
-
+//Nabeeha Ali: This is a button component that opens up a form using a modal. The user inputs their contact information, which gets stored in the backend database.json file upon submitting. Form validation is implemented to for smoother user experience. 
 export default function HelpForm() {
     const {
         handleSubmit

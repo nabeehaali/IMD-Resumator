@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import{faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 //import {useReactToPrint} from 'react-to-print'
 
-
+//Nabeeha Ali: This outputs all of the information that was stored in the userInfo useState variable, which is updated based on the user's imputs throughout all steps of the resume building form. Styling of this information was completed by another member of the group.
 function Output()
 {
     const { userInfo } = useContext(UserContext);

@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import { UserContext, NextContext2 } from "../SubPages/Form";
 import {TextField, Button, Box, FormControl, InputLabel, Select, MenuItem} from '@mui/material';
 
+//Nabeeha Ali: This form consists of text fields and a dropdown menu for the user to inout their education experience. The data entered gets saved in the userInfo useState variable from the Form.js file. Form validation was completed by another member of the group.
 function Profile()
 {
     const { userInfo, setUserInfo } = useContext(UserContext);

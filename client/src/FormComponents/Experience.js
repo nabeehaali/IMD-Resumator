@@ -3,6 +3,7 @@ import { UserContext, NextContext3 } from "../SubPages/Form";
 import {TextField, Button, Box} from '@mui/material';
 import { useForm } from "react-hook-form";
 
+//Nabeeha Ali: This form consists of text fields with text and date data types for the user to input their work experience. The data entered gets saved in the userInfo useState variable from the Form.js file. Form validation was completed by another member of the group.
 function Education()
 {
   const{handleSubmit} = useForm();
